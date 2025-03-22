@@ -1,2 +1,293 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+!DOCTYPE html>
+<html>
+    <head>
+        <title>Natron Nomad Safaris!</title>
+        <!-- Link to the favicon -->
+        <link rel="icon" href="IMG-20221006-WA0004.jpg" type="image/jpeg">
+        <style>
+            /* Page background styling */
+            body {
+                background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Light blue to white gradient */
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            /* Header styling */
+            header {
+                background-color: red;
+                color: yellow;
+                padding: 10px;
+                text-align: center;
+                position: relative;
+            }
+
+            /* Language dropdown styling */
+            .language-dropdown {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .language-dropdown select {
+                padding: 5px;
+                font-size: 14px;
+                background-color: blue; /* Set background color to blue */
+                color: white; /* Set text color to white */
+                border: none; /* Remove border */
+                border-radius: 5px; /* Add rounded corners */
+                cursor: pointer; /* Change cursor to pointer */
+            }
+
+            .language-dropdown select:hover {
+                background-color: darkblue; /* Darker blue on hover */
+            }
+
+            /* Navigation menu styling */
+            nav ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            nav ul li {
+                display: inline;
+                margin: 0 15px;
+            }
+
+            nav ul li button {
+                background: none;
+                border: none;
+                color: yellow;
+                font-weight: bold;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            nav ul li button:hover {
+                text-decoration: underline;
+            }
+
+            /* Section styling */
+            section {
+                padding: 20px;
+                margin: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                background-color: white;
+            }
+
+            /* Home Section Styling */
+            #home {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: url('pexels-balazsimon-15994102.jpg') no-repeat center center; /* Set background image */
+                background-size: cover; /* Ensure the image covers the entire section */
+                color: white; /* Set text color to white for readability */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add text shadow for better contrast */
+                border: none; /* Remove border */
+                border-radius: 0; /* Remove border radius */
+                padding: 50px; /* Add padding for spacing */
+                height: 100vh; /* Make the section fill the viewport height */
+                text-align: center;
+                animation: backgroundAnimation 10s infinite alternate; /* Add animation */
+            }
+
+            @keyframes backgroundAnimation {
+                0% {
+                    transform: scale(1);
+                    filter: brightness(100%);
+                }
+                50% {
+                    transform: scale(1.05); /* Reduced zoom from 1.1 to 1.05 */
+                    filter: brightness(105%); /* Adjusted brightness to 105% */
+                }
+                100% {
+                    transform: scale(1);
+                    filter: brightness(100%);
+                }
+            }
+
+            #home h1 {
+                font-size: 3em; /* Increase font size for the title */
+                margin-bottom: 20px;
+            }
+
+            #home p {
+                font-size: 1.5em; /* Increase font size for the paragraph */
+                line-height: 1.8;
+                max-width: 800px; /* Limit the width of the text */
+            }
+
+            /* Animated image styling */
+            .animated-image {
+                width: 40%;
+                max-width: 400px;
+                animation: float 3s infinite ease-in-out;
+            }
+
+            /* Slideshow container */
+            .slideshow-container {
+                width: 40%; /* Match the width of the animated image */
+                max-width: 400px; /* Match the max-width of the animated image */
+                position: relative;
+            }
+
+            .slideshow-container img {
+                width: 100%;
+                border-radius: 10px;
+                display: none;
+            }
+
+            .slideshow-container img.active {
+                display: block;
+            }
+
+            /* Animation keyframes */
+            @keyframes float {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            #about {
+                background: linear-gradient(to bottom, yellow, orange); /* Yellow to orange gradient */
+            }
+        </style>
+        <script>
+            function toggleSection(sectionId) {
+                const section = document.getElementById(sectionId);
+                if (section.classList.contains('hidden')) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            }
+
+            // Removed slideshow functionality
+        </script>
+        <script>
+            function changeLanguage(lang) {
+                if (lang === 'es') {
+                    window.location.href = 'https://translate.google.com/translate?hl=es&sl=en&u=' + encodeURIComponent(window.location.href);
+                } else {
+                    window.location.href = window.location.origin + window.location.pathname; // Reload original English page
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <h1>Welcome to Natron Nomad Safaris!</h1>
+            <nav>
+                <ul>
+                    <li><button onclick="toggleSection('home')">Home</button></li>
+                    <li><button onclick="toggleSection('about')">About</button></li>
+                    <li><button onclick="toggleSection('contact')">Contact</button></li>
+                </ul>
+            </nav>
+            <!-- Language Dropdown -->
+            <div class="language-dropdown">
+                <select onchange="changeLanguage(this.value)">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Explore Tanzania</h1>
+            <p>
+                Discover the beauty of Tanzania with Natron Nomad Safaris. From the majestic Mount Kilimanjaro to the vast Serengeti plains, 
+                experience the adventure of a lifetime. Relax on the pristine beaches of Zanzibar or immerse yourself in the vibrant culture 
+                of local communities. Your journey begins here.
+            </p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="hidden">
+            <h1>About</h1>
+            <p>
+                Natron Nomad Safaris is dedicated to providing unforgettable travel experiences in Tanzania. 
+                From thrilling safaris to serene beach getaways, we ensure every journey is unique and memorable.
+            </p>
+            <h2>Serengeti National Park</h2>
+            <p>
+                The Serengeti is one of the most famous wildlife sanctuaries in the world. It is renowned for the Great Migration, 
+                where millions of wildebeests, zebras, and gazelles traverse the plains in search of greener pastures. Visitors can 
+                also encounter the Big Five—lion, leopard, elephant, buffalo, and rhino—while enjoying the vast, open landscapes.
+            </p>
+            <h3>Activities</h3>
+            <ul>
+                <li><strong>Game Drives:</strong> Morning and evening safaris offer incredible chances to see predators hunting and other wildlife in action.</li>
+                <li><strong>Hot Air Balloon Safaris:</strong> Enjoy breathtaking aerial views of the Serengeti plains and wildlife at sunrise.</li>
+                <li><strong>Walking Safaris:</strong> Immerse yourself in nature with guided walking tours led by expert rangers.</li>
+                <li><strong>Cultural Visits:</strong> Engage with the Maasai people, known for their rich traditions and semi-nomadic lifestyle.</li>
+            </ul>
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>The Great Migration:</strong> Witness millions of animals moving in search of fresh grazing land, including dramatic river crossings.</li>
+                <li><strong>The Big Five:</strong> Spot lions, leopards, elephants, buffalo, and rhinos in their natural habitat.</li>
+                <li><strong>Diverse Landscapes:</strong> Explore vast grasslands, woodlands, riverine forests, and rocky outcrops (kopjes).</li>
+            </ul>
+            <h3>Best Time to Visit</h3>
+            <ul>
+                <li><strong>June – October:</strong> Ideal for viewing the Great Migration river crossings and excellent game viewing.</li>
+                <li><strong>December – March:</strong> Calving season in the Ndutu region, where thousands of wildebeest give birth, attracting predators.</li>
+                <li><strong>April – May:</strong> Lush landscapes after the rains, fewer tourists, and excellent photography opportunities.</li>
+            </ul>
+            <h2>Ngorongoro Crater</h2>
+            <p>
+                A UNESCO World Heritage Site, the Ngorongoro Crater is a stunning volcanic caldera teeming with wildlife. It is home 
+                to a dense population of lions, as well as elephants, flamingos, and rare black rhinos. The crater offers a unique 
+                opportunity to experience a diverse ecosystem within a compact area.
+            </p>
+            <h2>Lake Natron</h2>
+            <p>
+                Lake Natron is a serene and otherworldly destination known for its striking red waters caused by high alkalinity. 
+                It is a breeding ground for thousands of flamingos, making it a must-visit for bird enthusiasts. The surrounding 
+                landscapes, including the Ol Doinyo Lengai volcano, add to its breathtaking beauty.
+            </p>
+            <h2>Tarangire National Park</h2>
+            <p>
+                Tarangire is famous for its large elephant herds and iconic baobab trees. The park is a haven for birdwatchers, 
+                with over 500 species recorded. During the dry season, the Tarangire River attracts a variety of wildlife, 
+                offering excellent game-viewing opportunities.
+            </p>
+            <h2>Lake Manyara National Park</h2>
+            <p>
+                Lake Manyara is a small but diverse park known for its tree-climbing lions and vibrant birdlife, including flamingos. 
+                The park features a mix of dense forests, open plains, and the alkaline lake, providing a unique safari experience.
+            </p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="hidden">
+            <h1>Contact</h1>
+            <p>
+                Have questions or need assistance? Reach out to us at:
+                <br>Email: info@natronnomadsafaris.com
+                <br>Phone: +255 686644707
+            </p>
+        </section>
+    </body>
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px; margin-top: 20px;">
+        <p>&copy; 2025 Natron Nomad Safaris. All rights reserved.</p>
+        <p>Email: info@natronnomadsafaris.com | Phone: +255 +255 686644707</p>
+        <p>Follow us on:
+            <a href="https://www.instagram.com/your_instagram_username" style="color: yellow; text-decoration: none;">Instagram</a> |
+            <a href="#" style="color: yellow; text-decoration: none;">Facebook</a> |
+            <a href="#" style="color: yellow; text-decoration: none;">Twitter</a>
+        </p>
+    </footer>
+</html>
